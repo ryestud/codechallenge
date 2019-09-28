@@ -37,7 +37,7 @@ if( isset($_SESSION["ename"]) && isset($_SESSION["dnum"]) ){
 //        echo( "Invalid entry - please retry" ); 
         
     }
-    header("location:cost_page.php");
+    // header("location:cost_page.php");
 }
 else{
 //    header("location:cost_page.php");
