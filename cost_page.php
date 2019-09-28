@@ -35,7 +35,12 @@
                 <div class = "container back_panel" >
                     <p id = "bright_text">Employee Expenses Calculator</p>
                     <form  method = "post" action = "">
+                    
+                    <?php
                         
+                    ?>
+
+
                         <!--form input-->
                         <div class = "row inner_panel">
                             <!--name form-->
@@ -54,40 +59,20 @@
                         <div class = "row inner_panel">
                             <div class = "col-md">
                                 
-                            Total:
-                            <?php
-                                    echo_cost($ename,$dnum);
-                            ?>
+                                Total:
+                                <?php
+                                        echo_cost($ename,$dnum);
+                                ?>
 
                             </div>
-                            <div>
+                        <div>
                                 
                             </div>
                         </div>
                         <input type = "submit" value = "Calculate"> 
                         <input type = "reset" value = "Clear">
+
                     </form>
-<!--
-          Value 1: <input type = "text" name = "val1" size = "10">
-          Value 2: <input type = "text" name = "val2" size = "10">
-          <br>
-          Calculation: <br>
--->
-<!--
-          <input type = "radio" name = "calc" value = "add"> Add
-          <input type = "radio" name = "calc" value = "sub"> Subtract
-          <input type = "radio" name = "calc" value = "mul"> Multiply
-          <input type = "radio" name = "calc" value = "div"> Divide 
--->
-<!--
-          <hr>
-          <input type = "submit" value = "Calculate"> 
-          <input type = "reset" value = "Clear">
--->
-
-          
-
-
                 </div>
             </div>
         </div>
