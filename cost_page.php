@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require_once 'calculate_expenses.php';
+    include 'calculate_expenses.php';
     $ename = "";
     $dnum = "";
     $ecost = "";
@@ -31,36 +31,39 @@
             <div class = "col-md">
                 <div class = "container back_panel" >
                     <p id = "bright_text">Employee Expenses Calculator</p>
-                    <form  method = "post" action = "calculate_expenses.php">
+                    <form  method = "post" action = "">
                         
                         <!--form input-->
                         <div class = "row inner_panel">
                             <!--name form-->
                             <div class = "col-8 col-sm-6 container-fluid">
                                     <label  for='ename'><b>Name:</b></label>
-                                    <input type = "text" id="ename" placeholder='Employee Name' value = "<?php if(isset($_SESSION['ename'])){echo $SESSION['ename']; } ?>" name = "ename" size = "20" required>
+                                    <input type = "text" id="ename" placeholder='Employee Name' value = "<?php  ?>" name = "ename" size = "20" required>
                             </div>
                                 
                             <!--dependent form-->
                             <div class = "col-4 col-sm-6 container-fluid">
                                     <label  for='dnum'><b>Dependents:</b></label>
-                                    <input type = "number" id="dnum" value = "<?php if(isset($_SESSION['dnum'])){echo $SESSION['dnum']; } ?>" name = "dnum" size = "5" required>
+                                    <input type = "number" id="dnum" value = "<?php   ?>" name = "dnum" size = "5" required>
                             </div>
                         </div>
                         
                         <div class = "row inner_panel">
-                            <div class = "col-md">Total:</div>
+                            <div class = "col-md">
+                                
+                            Total:
+                            <?php
+                                    echo_cost($ename,$dnum);
+                            ?>
+
+                            </div>
                             <div>
-                                <?php
-                                    if(isset($_SESSION['ecost'])){
-                                        echo("<div class = \"col-md\" $dnum></div>");
-                                    }
-                                ?>
+                                
                             </div>
                         </div>
                         <input type = "submit" value = "Calculate"> 
                         <input type = "reset" value = "Clear">
-                        </form>
+                    </form>
 <!--
           Value 1: <input type = "text" name = "val1" size = "10">
           Value 2: <input type = "text" name = "val2" size = "10">

@@ -1,0 +1,10 @@
+<!Doctype html>
+<title>
+    Practice
+</title>
+
+<body>
+    <form action = "File1.php" method = "POST">
+    <input type = "submit" name = "submit">
+    </form>
+</body>
