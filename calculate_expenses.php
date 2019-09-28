@@ -1,13 +1,13 @@
 <?php 
 
 // session_start();
-// require_once 'Dao.php';
-// $dao = new Dao();
+require_once 'Dao.php';
+$dao = new Dao();
 // $dbret = $dao->getUser();
 
 function echo_cost($ename, &$dnum){
-    // $ename = htmlspecialchars($_POST["ename"]);
-    // $dnum = htmlspecialchars($_POST["dnum"]);
+    $ename = htmlspecialchars($_POST["ename"]);
+    $dnum = htmlspecialchars($_POST["dnum"]);
     $_SESSION["ename"] = $ename;
     $_SESSION["dnum"] = $dnum;
 
