@@ -1,9 +1,12 @@
 <?php
     session_start();
     include 'calculate_expenses.php';
+    require_once 'Dao.php';
+    $dao = new Dao();
     $ename = "";
     $dnum = "";
     $ecost = "";
+    $etot = "";
 ?>
 
 <html lang="en">

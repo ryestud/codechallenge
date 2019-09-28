@@ -1,5 +1,5 @@
 <?php
-//require_once 'KLogger.php';
+
 class Dao extends mysqli {
     private $host = "us-cdbr-iron-east-02.cleardb.net"; 
     private $db = "heroku_e673f8a007f0454"; 
@@ -7,8 +7,6 @@ class Dao extends mysqli {
     private $user = "b31b6b4ad98990";
     private $pass = "6f3b3d26";
     public $con = "";
-//    b7cb13a4
-    
     
     function __construct(){
         $this->con = $this->connect($this->host,$this->user,$this->pass,$this->db);
@@ -31,24 +29,18 @@ class Dao extends mysqli {
         $sqlret->execute();
         $result = $sqlret->fetchAll(\PDO::FETCH_ASSOC);
         return $result;
-  }
-    public function updateDB($style, $stock){
-        if($_SESSION['loggedin'] == true){
+    }
+
+    public function updateDB($ename, $dnum, $ecost){
+        if(isset($_SESSION['ename'])){
             $conn = $this->getConnection();
-//            $updateQuery = "UPDATE users SET stock = $stock, style = $style WHERE id = 1"; 
-            $updateQuery = "UPDATE users SET stock = :stock, style = :style WHERE id = 1"; 
+            $updateQuery = "INSERT INTO employees (ename, dnum, ecost) VALUES ($ename, $dnum, $ecost)"; 
             $q = $conn->prepare($updateQuery);
-            $q->bindParam(":style",$style);
-            $q->bindParam(":stock",$stock);
+            $q->bindParam(":ename",$ename);
+            $q->bindParam(":dnum",$dnum);
+            $q->bindParam(":ecost",$ecost);
             $q->execute();
         }
-    }
-    public function getPref(){
-        $con = $this->getConnection();
-        $sqlret = $con->prepare("SELECT style, stock FROM users");
-        $sqlret->execute();
-        $result = $sqlret->fetchAll(\PDO::FETCH_ASSOC);
-        return $result;
     }
 }
 
