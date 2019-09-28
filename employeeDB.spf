@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ContentFilters</key>
+	<dict/>
+	<key>auto_connect</key>
+	<true/>
+	<key>data</key>
+	<dict>
+		<key>connection</key>
+		<dict>
+			<key>database</key>
+			<string>heroku_e673f8a007f0454</string>
+			<key>host</key>
+			<string>us-cdbr-iron-east-02.cleardb.net</string>
+			<key>name</key>
+			<string>us-cdbr-iron-east-02.cleardb.net</string>
+			<key>rdbms_type</key>
+			<string>mysql</string>
+			<key>sslCACertFileLocation</key>
+			<string></string>
+			<key>sslCACertFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslCertificateFileLocation</key>
+			<string></string>
+			<key>sslCertificateFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslKeyFileLocation</key>
+			<string></string>
+			<key>sslKeyFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>type</key>
+			<string>SPTCPIPConnection</string>
+			<key>useSSL</key>
+			<integer>0</integer>
+			<key>user</key>
+			<string>b31b6b4ad98990</string>
+		</dict>
+		<key>session</key>
+		<dict>
+			<key>connectionEncoding</key>
+			<string>utf8</string>
+			<key>contentFilter</key>
+			<dict/>
+			<key>contentPageNumber</key>
+			<integer>1</integer>
+			<key>contentSelection</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGJSZYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKgHCBMUFRYaIVUkbnVsbNMJCgsMDxJX
+			TlMua2V5c1pOUy5vYmplY3RzViRjbGFzc6INDoACgAOiEBGABIAF
+			gAdUdHlwZVRyb3dzXxAdU2VsZWN0aW9uRGV0YWlsVHlwZU5TSW5k
+			ZXhTZXTSFwsYGVxOU1JhbmdlQ291bnQQAIAG0hscHR5aJGNsYXNz
+			bmFtZVgkY2xhc3Nlc1pOU0luZGV4U2V0oh8gWk5TSW5kZXhTZXRY
+			TlNPYmplY3TSGxwiI1xOU0RpY3Rpb25hcnmiIiRYTlNPYmplY3Rf
+			EA9OU0tleWVkQXJjaGl2ZXLRJyhUZGF0YYABAAgAEQAaACMALQAy
+			ADcAQABGAE0AVQBgAGcAagBsAG4AcQBzAHUAdwB8AIEAoQCmALMA
+			tQC3ALwAxwDQANsA3gDpAPIA9wEEAQcBEAEiASUBKgAAAAAAAAIB
+			AAAAAAAAACkAAAAAAAAAAAAAAAAAAAEs
+			</data>
+			<key>contentSortCol</key>
+			<string>id</string>
+			<key>contentSortColIsAsc</key>
+			<false/>
+			<key>contentViewport</key>
+			<string>{{0, 0}, {924, 473}}</string>
+			<key>isToolbarVisible</key>
+			<true/>
+			<key>table</key>
+			<string>employee</string>
+			<key>view</key>
+			<string>SP_VIEW_STRUCTURE</string>
+			<key>windowVerticalDividerPosition</key>
+			<real>214</real>
+		</dict>
+	</dict>
+	<key>encrypted</key>
+	<false/>
+	<key>format</key>
+	<string>connection</string>
+	<key>queryFavorites</key>
+	<array/>
+	<key>queryHistory</key>
+	<array>
+		<string>select style, stock from users</string>
+		<string>style</string>
+		<string>DESCRIBE users
+select style, stock from users</string>
+		<string>select stock, style from users</string>
+		<string>DESCRIBE users
+select stock, style from users</string>
+		<string>DESCRIBE users
+select stock, stock from users</string>
+		<string>DESCRIBE users
+select style, stock 'from' users</string>
+		<string>DESCRIBE users</string>
+		<string>SELECT * FROM users</string>
+		<string>SELECT * FROM users WHERE username = '".mysql_real_escape_string($userform)."' and password = '".mysql_real_escape_string($passform)."'</string>
+		<string>SELECT * FROM users WHERE username = '$userform' and password = '$passform'</string>
+		<string>SELECT * FROM 'users' WHERE username = '$userform' and password = '$passform'</string>
+		<string>SELECT * FROM '$tbl_name' WHERE username = '$userform' and password = '$passform'</string>
+		<string>'</string>
+		<string>tbl_name</string>
+		<string>SELECT * FROM members WHERE username = '$userform' and password = '$passform'</string>
+		<string>SELECT * FROM $tbl_name WHERE username = '$userform' and password = '$passform'</string>
+		<string>$tbl_name</string>
+		<string>SELECT * FROM WHERE username = '$userform' and password = '$passform'</string>
+		<string>show tables</string>
+	</array>
+	<key>rdbms_type</key>
+	<string>mysql</string>
+	<key>rdbms_version</key>
+	<string>5.5.62-log</string>
+	<key>version</key>
+	<integer>1</integer>
+</dict>
+</plist>
