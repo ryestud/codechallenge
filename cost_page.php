@@ -59,7 +59,7 @@
                         <div class = "row inner_panel">
                             <div class = "col-md">        
                                 <br>
-                                Total:
+                                Total
                                 <?php
                                         echo_cost($ename,$ecost);
                                         $etot = $dao->getTotalCost();
