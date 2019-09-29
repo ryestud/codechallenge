@@ -61,7 +61,7 @@
                                 
                                 Total:
                                 <?php
-                                        echo_cost($ename,$dnum);
+                                        echo_cost($ename,$ecost);
                                 ?>
 
                             </div>
