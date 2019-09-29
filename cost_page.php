@@ -46,13 +46,15 @@
                             <!--name form-->
                             <div class = "col-8 col-sm-6 container-fluid">
                                     <label  for='ename'><b>Name:</b></label>
-                                    <input type = "text" id="ename" placeholder='Employee Name' value = "<?php $_SESSION["ename"] ?>" name = "ename" size = "20" required>
+                                    <input type = "text" id="ename" placeholder='Employee Name' value = "<?php if(isset($_SESSION['ename'])) { echo $_SESSION['ename']; }
+ ?>" name = "ename" size = "20" required>
                             </div>
                                 
                             <!--dependent form-->
                             <div class = "col-4 col-sm-6 container-fluid">
                                     <label  for='dnum'><b>Dependents:</b></label>
-                                    <input type = "number" id="dnum" value = "<?php $_SESSION["dnum"] ?>" name = "dnum" size = "5" required>
+                                    <input type = "number" id="dnum" value = "<?php if(isset($_SESSION['dnum'])) { echo $_SESSION['dnum']; }
+ ?>" name = "dnum" size = "5" required>
                             </div>
                         </div>
                         

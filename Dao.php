@@ -23,14 +23,17 @@ class Dao extends mysqli {
         }      
     }
 
+    //returns the total cost of all employees
     public function getTotalCost() {
         $con = $this->getConnection();
-        $sqlret = $con->prepare('SELECT SUM(ecost) AS totCost FROM employee');
+        $totalQuery = "SELECT SUM(ecost) AS totCost FROM employee";
+        $sqlret = $con->prepare($totalQuery);
         $sqlret->execute();
         $result = $sqlret->fetch(PDO::FETCH_ASSOC);
         return $result['totCost'];
     }
 
+    //updates the db with a new employee entry
     public function updateDB($ename, $dnum, $ecost){
         if(isset($_SESSION['ename'])){
             $conn = $this->getConnection();
@@ -46,6 +49,14 @@ class Dao extends mysqli {
             $q->bindParam(":ecost",$ecost);
             $q->execute();
         }
+    }
+
+    public function clearDB(){
+        $con = $this->getConnection();
+        $dbquery = "DELETE FROM employee WHERE ID = ?";
+        $sqlret = $con->prepare($dbquery);
+
+
     }
 }
 
