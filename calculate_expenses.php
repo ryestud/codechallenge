@@ -25,9 +25,9 @@ function echo_cost(&$ename, &$dnum){
         else{ //They have no dependents
             $ecost = (26 * 2000) - (1000 * 0.9);    
         }
-        // echo "$".$ecost;
-        $_SESSION['ecost'] = "$".$ecost;
-        // echo "$".$ecost;
+        
+        //return the cost
+        $_SESSION['ecost'] = "for: ". $ename ." $".$ecost;
         echo $_SESSION['ecost'];
         echo "<br>10% discount applied!";
         
@@ -45,19 +45,23 @@ function echo_cost(&$ename, &$dnum){
         else{ //They have no dependents
             $ecost = (26 * 2000) - 1000;    
         }
-        $_SESSION['ecost'] = "$".$ecost;
-        // echo "$".$ecost;
+
+        //return the cost
+        $_SESSION['ecost'] = "for: ". $ename ." $".$ecost;
         echo $_SESSION['ecost'];
+
         //add this employee to the list of all
         add_to_elist($ename, $dnum, $ecost);
     	}
 	}
 }
 
+//Adds new employee to the DB
 function add_to_elist($ename,$dnum,$ecost){
     $dao = new Dao();
     $dao->updateDB($ename,$dnum,$ecost);
 }
+
 
 ?>
 

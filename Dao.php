@@ -23,25 +23,23 @@ class Dao extends mysqli {
         }      
     }
 
-    public function getTotalCost () {
+    public function getTotalCost() {
         $con = $this->getConnection();
-        $sqlret = $con->prepare("SELECT username, password FROM users");
+        $sqlret = $con->prepare('SELECT SUM(ecost) AS totCost FROM employee');
         $sqlret->execute();
-        $result = $sqlret->fetchAll(\PDO::FETCH_ASSOC);
-        return $result;
+        $result = $sqlret->fetch(PDO::FETCH_ASSOC);
+        return $result['totCost'];
     }
 
     public function updateDB($ename, $dnum, $ecost){
         if(isset($_SESSION['ename'])){
             $conn = $this->getConnection();
-            // $updateQuery = "INSERT INTO employee (ename, dnum, ecost) VALUES ($ename, $dnum, $ecost)"; 
             $data = [
                 'ename'=>$ename,
                 'dnum'=>$dnum,
                 'ecost'=>$ecost,
             ];
             $updateQuery = "INSERT INTO employee (ename, dnum, ecost) VALUES (:ename, :dnum, :ecost)"; 
-            // $stmt = $conn->prepare($updateQuery);
             $q = $conn->prepare($updateQuery);
             $q->bindParam(":ename",$ename);
             $q->bindParam(":dnum",$dnum);

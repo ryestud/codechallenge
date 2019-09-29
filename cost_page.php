@@ -57,11 +57,13 @@
                         </div>
                         
                         <div class = "row inner_panel">
-                            <div class = "col-md">
-                                
+                            <div class = "col-md">        
+                                <br>
                                 Total:
                                 <?php
                                         echo_cost($ename,$ecost);
+                                        $etot = $dao->getTotalCost();
+                                        echo "<p>Total Employee Costs: </p>"."$".$etot;
                                 ?>
 
                             </div>
