@@ -24,28 +24,17 @@
     <title>Employee Expenses</title>
   </head>
   <body>
-<!--
-     <div class = " justify-content-end">
-            <h1>Employee Expense Calculator</h1>
-    </div>
--->
     <div class = "container">
         <div class = "row ">
             <div class = "col-md">
                 <div class = "container back_panel" >
                     <p id = "bright_text">Employee Expenses Calculator</p>
-                    <form  method = "post" action = "">
-                    
-                    <?php
-                        
-                    ?>
-
-
+                    <form   method = "post" action = "">
                         <!--form input-->
                         <div class = "row inner_panel">
                             <!--name form-->
                             <div class = "col-8 col-sm-6 container-fluid">
-                                    <label  for='ename'><b>Name:</b></label>
+                                    <label for='ename'><b>Name:</b></label>
                                     <input type = "text" id="ename" placeholder='Employee Name' value = "<?php if(isset($_SESSION['ename'])) { echo $_SESSION['ename']; }
  ?>" name = "ename" size = "20" required>
                             </div>
@@ -58,14 +47,17 @@
                             </div>
                         </div>
                         
+                        <!-- total panel -->
                         <div class = "row inner_panel">
                             <div class = "col-md">        
                                 <br>
-                                Total
-                                <?php
-                                        echo_cost($ename,$ecost);
-                                        $etot = $dao->getTotalCost();
-                                        echo "<p>Total Employee Costs: </p>"."$".$etot;
+                                <?php 
+                                    if(isset($_SESSION['ename'])){
+                                        echo "Total";
+                                    }
+                                    echo_cost($ename,$ecost);
+                                    $etot = $dao->getTotalCost();
+                                    echo "<p>Total Employee Costs: </p>"."$".$etot;
                                 ?>
 
                             </div>
@@ -73,19 +65,14 @@
                                 
                             </div>
                         </div>
-                        <input type = "submit" value = "Calculate"> 
-                        <input type = "reset" value = "Clear">
+                        <input type = "submit" value = "Add Employee"> 
+                        <!-- <input name = "reset" type = "reset" value = "Clear" > -->
 
                     </form>
                 </div>
             </div>
         </div>
     </div>  
-      
-      
-      
-      
-      
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

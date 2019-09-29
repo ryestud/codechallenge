@@ -12,6 +12,7 @@ class Dao extends mysqli {
         $this->con = $this->connect($this->host,$this->user,$this->pass,$this->db);
     }
    
+    //connection to ClearDB
     public function getConnection () {
         try {
             $con = new PDO("mysql:host={$this->host};dbname={$this->db}", $this->user, $this->pass);
@@ -51,11 +52,12 @@ class Dao extends mysqli {
         }
     }
 
-    public function clearDB(){
+    //remove entry from DB
+    public function clearDB($ename){
+        $dbquery = "DELETE FROM employee WHERE ID = $ename";
         $con = $this->getConnection();
-        $dbquery = "DELETE FROM employee WHERE ID = ?";
         $sqlret = $con->prepare($dbquery);
-
+ 
 
     }
 }

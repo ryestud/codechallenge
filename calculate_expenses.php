@@ -1,11 +1,9 @@
 <?php 
-
-// session_start();
 require_once 'Dao.php';
 $dao = new Dao();
 
 
-
+//returns the cost of the entered employee
 function echo_cost(&$ename, &$dnum){
 
 	if(isset($_POST["ename"])){
