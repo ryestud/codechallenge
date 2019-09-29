@@ -52,9 +52,7 @@
                             <div class = "col-md">        
                                 <br>
                                 <?php 
-                                    if(isset($_SESSION['ename'])){
-                                        echo "Total";
-                                    }
+                                    echo "Total ";
                                     echo_cost($ename,$ecost);
                                     $etot = $dao->getTotalCost();
                                     echo "<p>Total Employee Costs: </p>"."$".$etot;
