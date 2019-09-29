@@ -35,14 +35,14 @@
                             <!--name form-->
                             <div class = "col-8 col-sm-6 container-fluid">
                                     <label for='ename'><b>Name:</b></label>
-                                    <input type = "text" id="ename" placeholder='Employee Name' value = "<?php if(isset($_SESSION['ename'])) { echo $_SESSION['ename']; }
+                                    <input type = "text" id="ename" placeholder='Employee Name' value = "<?php if(isset($_POST['ename'])) { echo $_POST['ename']; }
  ?>" name = "ename" size = "20" required>
                             </div>
                                 
                             <!--dependent form-->
                             <div class = "col-4 col-sm-6 container-fluid">
                                     <label  for='dnum'><b>Dependents:</b></label>
-                                    <input type = "number" id="dnum" value = "<?php if(isset($_SESSION['dnum'])) { echo $_SESSION['dnum']; }
+                                    <input type = "number" id="dnum" value = "<?php if(isset($_POST['dnum'])) { echo $_POST['dnum']; }
  ?>" name = "dnum" size = "5" required>
                             </div>
                         </div>
@@ -63,10 +63,16 @@
                                 
                             </div>
                         </div>
-                        <input type = "submit" value = "Add Employee"> 
+                        <input name = "submit" type = "submit" value = "Add Employee"> 
                         <!-- <input name = "reset" type = "reset" value = "Clear" > -->
 
                     </form>
+
+                    <?php
+                        if(isset($_POST['submit'])){
+                            $_SESSION['ename'] = $_POST['ename'];
+                        }
+                    ?>
                 </div>
             </div>
         </div>
