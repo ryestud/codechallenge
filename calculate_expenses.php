@@ -4,8 +4,11 @@
 require_once 'Dao.php';
 // $dbret = $dao->getUser();
 
-function echo_cost($ename, $dnum){
-    $ename = htmlspecialchars($_POST["ename"]);
+
+function echo_cost(&$ename, &$dnum){
+
+	if(isset($_POST["ename"])){
+		$ename = htmlspecialchars($_POST["ename"]);
     $dnum = htmlspecialchars($_POST["dnum"]);
     $ecost = "";
     $_SESSION["ename"] = $ename;
@@ -25,7 +28,7 @@ function echo_cost($ename, $dnum){
         echo "<br>10% discount applied!";
         //add this employee to the list of all
         add_to_elist($ename, $dnum, $ecost);
-    }
+			}
       //Regular Employees 
       else if((substr(strtoupper($ename),0,1) != "A") && is_numeric($dnum)){
         // They have dependents
@@ -38,8 +41,8 @@ function echo_cost($ename, $dnum){
         echo "$".$ecost;
         //add this employee to the list of all
         add_to_elist($ename, $dnum, $ecost);
-    }
-
+    	}
+	}
 }
 
 function add_to_elist($ename,$dnum,$ecost){
