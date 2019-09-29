@@ -2,7 +2,8 @@
 
 // session_start();
 require_once 'Dao.php';
-$dbret = $dao->updateDB();
+$dao = new Dao();
+
 
 
 function echo_cost(&$ename, &$dnum){
