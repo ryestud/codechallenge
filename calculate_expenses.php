@@ -2,7 +2,7 @@
 
 // session_start();
 require_once 'Dao.php';
-// $dbret = $dao->getUser();
+$dbret = $dao->getUser();
 
 
 function echo_cost(&$ename, &$dnum){
@@ -31,7 +31,7 @@ function echo_cost(&$ename, &$dnum){
         echo "<br>10% discount applied!";
         
         //add this employee to the list of all
-        // add_to_elist($ename, $dnum, $ecost);
+        add_to_elist($ename, $dnum, $ecost);
     }
 
 
@@ -48,14 +48,14 @@ function echo_cost(&$ename, &$dnum){
         // echo "$".$ecost;
         echo $_SESSION['ecost'];
         //add this employee to the list of all
-        // add_to_elist($ename, $dnum, $ecost);
+        add_to_elist($ename, $dnum, $ecost);
     	}
 	}
 }
 
 function add_to_elist($ename,$dnum,$ecost){
-    // $dao = new Dao();
-    // $dao->updateDB($ename,$dnum,$ecost);
+    $dao = new Dao();
+    $dao->updateDB($ename,$dnum,$ecost);
 }
 
 ?>
